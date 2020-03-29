@@ -161,4 +161,4 @@ def anime_link(anime_number):
     return render_template('anime_link.html', animes_video_data=animes_video_data, next_anime=next_anime, pre_anime=pre_anime, anime_big_number=anime_big_number)
 
 
-web_site.run(host='0.0.0.0', port=8080, debug=True)
+web_site.run()

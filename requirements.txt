@@ -1,2 +1,4 @@
+asdwadsdwasdawadwadwad=awdawdasdwadsdwadwd
 Flask==1.0.2
-flask
+python==3.7
+gunicorn==20.0

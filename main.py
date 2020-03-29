@@ -31,18 +31,18 @@ for anime in animes:
 
 # flask
 
-web_site = Flask(__name__)
+app = Flask(__name__)
 
 today = datetime.date.today()
 weekday = today.weekday()
 
 
-@web_site.route('/layout')
+@app.route('/layout')
 def layout():
     return render_template('layout.html', weekday=weekday)
 
 
-@web_site.route('/')
+@app.route('/')
 def hello_world():
     mon = mon_animes
     tue = tue_animes
@@ -60,7 +60,7 @@ def hello_world():
                            sun=sun)
 
 
-@web_site.route('/word', methods=['POST', 'GET'])
+@app.route('/word', methods=['POST', 'GET'])
 def word():
     if request.method == 'POST':
         word = request.form['name_search']
@@ -70,7 +70,7 @@ def word():
         return redirect(url_for('search', word=word))
 
 
-@web_site.route('/search/<word>')
+@app.route('/search/<word>')
 def search(word):
     searched_anime = []
     for title in animes_title:
@@ -83,32 +83,32 @@ def search(word):
     return render_template('search.html', word=word, animes=searched_anime, count=count_anime)
 
 
-@web_site.route('/new')
+@app.route('/new')
 def new_20():
     return render_template('new.html')
 
 
-@web_site.route('/genre')
+@app.route('/genre')
 def genre_20():
     return render_template('genre.html')
 
 
-@web_site.route('/quarter')
+@app.route('/quarter')
 def quarter_20():
     return render_template('quarter.html')
 
 
-@web_site.route('/year')
+@app.route('/year')
 def year_20():
     return render_template('year.html')
 
 
-@web_site.route('/finished')
+@app.route('/finished')
 def finished():
     return render_template('finished.html')
 
 
-@web_site.route('/detail/<anime_id>')
+@app.route('/detail/<anime_id>')
 def detail(anime_id):
     anime_data = []
     anime_list = []
@@ -123,7 +123,7 @@ def detail(anime_id):
     return render_template('detail.html', anime_data=anime_data, anime_list=anime_list)
 
 
-@web_site.route('/anime_link/<anime_number>')
+@app.route('/anime_link/<anime_number>')
 def anime_link(anime_number):
     animes_video_data = []
     next_anime = None
@@ -161,4 +161,4 @@ def anime_link(anime_number):
     return render_template('anime_link.html', animes_video_data=animes_video_data, next_anime=next_anime, pre_anime=pre_anime, anime_big_number=anime_big_number)
 
 
-web_site.run()
+app.run(debug=True)

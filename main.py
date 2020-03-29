@@ -52,7 +52,7 @@ def hello_world():
     sat = sat_animes
     sun = sun_animes
 
-    return render_template('home.html', mon=mon, tue=tue,
+    return render_template('index.html', mon=mon, tue=tue,
                            wed=wed,
                            thu=thu,
                            fri=fri,
@@ -159,6 +159,3 @@ def anime_link(anime_number):
                 anime_big_number = anime['anime_id']
 
     return render_template('anime_link.html', animes_video_data=animes_video_data, next_anime=next_anime, pre_anime=pre_anime, anime_big_number=anime_big_number)
-
-
-app.run()

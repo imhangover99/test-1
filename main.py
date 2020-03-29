@@ -155,7 +155,7 @@ def anime_link(anime_number):
                 pre_video = anime_list[pre_video_id]
                 pre_anime = pre_video
 
-                # go to 리스트
+
                 anime_big_number = anime['anime_id']
 
     return render_template('anime_link.html', animes_video_data=animes_video_data, next_anime=next_anime, pre_anime=pre_anime, anime_big_number=anime_big_number)

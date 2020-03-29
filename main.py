@@ -138,7 +138,7 @@ def anime_link(anime_number):
                 anime_list_num = anime_list.index(anime_data)
                 print(len(anime_list))
 
-                # 다음
+
                 if anime_list_num == 0:
                     next_video_id = anime_list_num
                 else:
@@ -147,7 +147,7 @@ def anime_link(anime_number):
 
                 next_anime = next_video
 
-                # 이전
+
                 if anime_list_num == len(anime_list)-1:
                     pre_video_id = anime_list_num
                 else:

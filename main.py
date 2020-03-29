@@ -161,4 +161,4 @@ def anime_link(anime_number):
     return render_template('anime_link.html', animes_video_data=animes_video_data, next_anime=next_anime, pre_anime=pre_anime, anime_big_number=anime_big_number)
 
 
-app.run(debug=True)
+app.run()
